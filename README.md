@@ -5,19 +5,26 @@
 ```python
 # just pass your function as argument to time_tracker 
 # and assign to a variable, so it'll receive your function modified
+from time_tracker import tracker
+...
+
 def your_func():
     ...
-    
-your_func_tracked = time_tracker(your_func)
+
+your_func_tracked = tracker.timer(your_func)
 
 # now just starting using the variable as you would call your function
-
 your_func_tracked()
+
+# or can be use as decorator
+@tracker.timer
+def your_func()
 ```
 
-##### example print
+
+##### example output
 ```commandline
-TIME_TRACKER: your_func took 5.01 seconds
+TIME_SPENT: your_func took 5.01 seconds
 ```
 
-PS: it's just a simple way to monitor any function...
+PS: it's just a simple way to monitor any function.
